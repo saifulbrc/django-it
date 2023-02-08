@@ -1,0 +1,48 @@
+{% extends 'itshop/base.html' %}
+{% load custom_filter %}
+{% block content %}
+
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="list-group">
+                <a href="/" class="list-group-item list-group-item-action btn btn-outline-success"> All Products </a>
+                {% for category in cats %}
+                <a href="/?category={{category.id}}" class="list-group-item list-group-item-action btn btn-outline-success"> {{category.name}}</a>
+                {% endfor %}
+
+        </div>
+
+        <div class="col-lg-9">
+
+        </div>
+
+<div class="container-field mt-8">
+
+    <div class="row">
+        <div class="col=lg-3">
+            <div class="list-group">
+                <a href="/" class="list-group-item list-group-item-action btn btn-outline-success">All products</a>
+                {% for category in catrgories %}
+                <a href="/?category={{category.id}}" class="list-group-item ite"></a>
+                {%  endfor  %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8" mx-auto>
+        <div class="row mx=auto"> -->
+            {% for product in products %}
+            <div class="card mx-auto mb-3" id={{product.id}}>
+                <img src="{{product.image.url}}" class="card-img-top">
+                <div class="card-body">
+                    <p class="card=title">{{product.name}}</p>
+                    <p class="card=text"><strong>{{product.sell_price}}</strong></p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
